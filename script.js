@@ -10,6 +10,16 @@ const moods = JSON.parse(localStorage.getItem('dailyMoods')) || []; // Load from
 const dayNames = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
 
 
+const nome = prompt("Qual é o seu nome?");
+
+if (nome !== null && nome.trim() !== "") {
+  const container = document.getElementById("mensagem-container");
+  const titulo = document.createElement("h1");
+  titulo.textContent = `Bem-vindo(a), ${nome}!`;
+  container.appendChild(titulo);
+}
+
+
 emojiButtons.forEach(button => {
     button.addEventListener('click', () => {
         emojiButtons.forEach(btn => btn.classList.remove('selected'));
